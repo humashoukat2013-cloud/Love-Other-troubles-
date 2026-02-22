@@ -1,0 +1,142 @@
+* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #F9E4E8; /* Soft Pink Background */
+    overflow-x: hidden;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 8%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2D5D5D; /* Teal from image */
+}
+
+.highlight { color: #C1664E; } /* Copper from image */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li { margin-left: 25px; }
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #C1664E; }
+
+/* ===== HERO LAYOUT ===== */
+.hero-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-text {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.accent { color: black; }
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+/* ===== IMAGE AREA (THE SMALLER IMAGE) ===== */
+.hero-image-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box {
+    position: relative;
+    width: 80%; /* Makes the image smaller than full screen */
+    max-width: 500px; /* Limits maximum size */
+    border-radius: 20px;
+    overflow: hidden; /* Keeps shade inside corners */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.side-image {
+    width: 100%;
+    display: block;
+}
+
+/* THE SHADE / SHIELD OVERLAY */
+.shade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient that blends from the pink background color into transparency */
+    background: linear-gradient(to right, #F9E4E8 0%, rgba(249, 228, 232, 0) 30%);
+    z-index: 1;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #C1664E;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #2D5D5D;
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 850px) {
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-text h1 { font-size: 2.5rem; }
+    .image-box { width: 90%; margin-top: 30px; }
+    .shade-overlay {
+        background: linear-gradient(to top, #F9E4E8 0%, rgba(249, 228, 232, 0) 30%);
+    }
+}
